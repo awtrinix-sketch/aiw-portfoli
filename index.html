@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="A!W - Professional Web Development. Custom websites, e-commerce solutions, and web applications. $150 - $800 USD">
-    <title>A!W | Professional Web Development & Design</title>
+    <meta name="description" content="A!W - Professional Web Development. Custom websites from $150-$800 USD. Contact via WhatsApp or Email.">
+    <title>A!W | Professional Web Development Services</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -17,18 +16,16 @@
 
         :root {
             --primary: #0066ff;
-            --secondary: #ff0066;
             --dark: #0f0f1e;
             --darker: #050510;
             --text-primary: #ffffff;
             --text-secondary: #a8aac5;
             --accent: #00d4ff;
             --success: #00cc88;
+            --danger: #ff0066;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         body {
             font-family: 'Inter', sans-serif;
@@ -52,6 +49,7 @@
             pointer-events: none;
         }
 
+        /* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -91,23 +89,9 @@
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
-            color: var(--primary);
-        }
+        nav a:hover { color: var(--primary); }
 
-        nav a.admin-link {
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            color: var(--dark);
-            padding: 0.6rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            transition: transform 0.3s ease;
-        }
-
-        nav a.admin-link:hover {
-            transform: translateY(-2px);
-        }
-
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -117,21 +101,7 @@
             text-align: center;
         }
 
-        .hero-content {
-            max-width: 900px;
-            animation: fadeInUp 0.8s ease-out;
-        }
-
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+        .hero-content { max-width: 900px; }
 
         .hero h1 {
             font-family: 'Poppins', sans-serif;
@@ -201,6 +171,18 @@
             transform: translateY(-5px);
         }
 
+        .btn-whatsapp {
+            background: #25D366;
+            color: white;
+            box-shadow: 0 10px 40px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(37, 211, 102, 0.5);
+        }
+
+        /* Sections */
         section {
             padding: 120px 5%;
             max-width: 1400px;
@@ -229,6 +211,7 @@
             margin-right: auto;
         }
 
+        /* Portfolio */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
@@ -260,23 +243,6 @@
             align-items: center;
             justify-content: center;
             font-size: 3.5rem;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .portfolio-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .portfolio-item:hover .portfolio-image::after {
-            left: 100%;
         }
 
         .portfolio-content {
@@ -300,7 +266,6 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 0.8rem;
-            color: var(--text-primary);
         }
 
         .portfolio-description {
@@ -310,173 +275,182 @@
             flex-grow: 1;
         }
 
-        .portfolio-tech {
-            display: flex;
-            gap: 0.5rem;
-            flex-wrap: wrap;
-            margin-top: auto;
-        }
-
-        .tech-tag {
-            background: rgba(0, 102, 255, 0.2);
-            color: var(--accent);
-            padding: 0.4rem 0.8rem;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
         .portfolio-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+            display: inline-block;
             margin-top: 1.5rem;
             color: var(--primary);
             text-decoration: none;
             font-weight: 600;
-            transition: gap 0.3s ease;
+            transition: all 0.3s ease;
         }
 
-        .portfolio-link:hover {
-            gap: 1rem;
-        }
+        .portfolio-link:hover { color: var(--accent); }
 
-        .services-grid {
+        /* Pricing */
+        .pricing-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 2rem;
         }
 
-        .service-card {
+        .pricing-card {
             background: rgba(0, 102, 255, 0.05);
             border: 1px solid rgba(0, 102, 255, 0.2);
             border-radius: 15px;
             padding: 2.5rem;
             transition: all 0.3s ease;
             text-align: center;
+            position: relative;
         }
 
-        .service-card:hover {
+        .pricing-card:hover {
             border-color: var(--primary);
             box-shadow: 0 15px 50px rgba(0, 102, 255, 0.15);
             transform: translateY(-10px);
         }
 
-        .service-icon {
+        .pricing-icon {
             font-size: 3.5rem;
             margin-bottom: 1.5rem;
         }
 
-        .service-card h3 {
+        .pricing-card h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: var(--text-primary);
         }
 
-        .service-card p {
+        .pricing-card p {
             color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.7;
             margin-bottom: 1.5rem;
         }
 
-        .price-tag {
+        .price-range {
             font-family: 'Poppins', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 700;
+            font-size: 2.5rem;
+            font-weight: 800;
             color: var(--primary);
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-form {
-            background: linear-gradient(135deg, rgba(0, 102, 255, 0.08), rgba(0, 212, 255, 0.04));
-            border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 15px;
-            padding: 3rem;
-            margin-bottom: 3rem;
-        }
-
-        .form-group {
-            margin-bottom: 2rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.7rem;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(0, 102, 255, 0.05);
-            border: 1px solid rgba(0, 102, 255, 0.2);
+        .deposit-badge {
+            background: rgba(255, 0, 102, 0.2);
+            border: 1px solid rgba(255, 0, 102, 0.5);
             border-radius: 8px;
-            color: var(--text-primary);
-            font-family: inherit;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            color: #ff6699;
+            font-size: 0.85rem;
+            font-weight: 600;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
+        .website-mockup {
             background: rgba(0, 102, 255, 0.1);
-            box-shadow: 0 0 20px rgba(0, 102, 255, 0.2);
+            border: 2px solid rgba(0, 102, 255, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            min-height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
         }
 
-        .form-group textarea {
-            resize: vertical;
-            min-height: 150px;
+        .website-mockup-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
         }
 
-        .contact-info {
+        .website-mockup-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Contact */
+        .contact-container { max-width: 800px; margin: 0 auto; }
+
+        .contact-options {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .contact-method {
-            background: rgba(0, 102, 255, 0.08);
+            background: linear-gradient(135deg, rgba(0, 102, 255, 0.08), rgba(0, 212, 255, 0.04));
             border: 1px solid rgba(0, 102, 255, 0.2);
-            border-radius: 12px;
-            padding: 2rem;
+            border-radius: 15px;
+            padding: 2.5rem;
             text-align: center;
         }
 
         .contact-method h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
             color: var(--primary);
             margin-bottom: 1rem;
-            font-size: 1.1rem;
         }
 
         .contact-method p {
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 1.1rem;
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
         }
 
         .contact-method a {
+            display: inline-block;
+        }
+
+        .contact-link {
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-link:hover {
             color: var(--accent);
+        }
+
+        .whatsapp-link {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
             text-decoration: none;
-            transition: color 0.3s ease;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .contact-method a:hover {
-            color: var(--primary);
+        .whatsapp-link:hover {
+            background: #20ba5a;
+            transform: translateY(-3px);
         }
 
+        .email-link {
+            display: inline-block;
+            background: var(--primary);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .email-link:hover {
+            background: #0052cc;
+            transform: translateY(-3px);
+        }
+
+        /* Footer */
         footer {
             background: rgba(15, 15, 30, 0.9);
             border-top: 1px solid rgba(0, 102, 255, 0.2);
@@ -485,15 +459,14 @@
             color: var(--text-secondary);
         }
 
-        footer p {
-            margin-bottom: 1.5rem;
-        }
+        footer p { margin-bottom: 1.5rem; }
 
         .social-links {
             display: flex;
             justify-content: center;
             gap: 2rem;
             margin-top: 2rem;
+            flex-wrap: wrap;
         }
 
         .social-links a {
@@ -508,48 +481,18 @@
             transform: scale(1.1);
         }
 
+        /* Responsive */
         @media (max-width: 768px) {
-            nav ul {
-                gap: 1.5rem;
-                font-size: 0.9rem;
-            }
-
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                gap: 1rem;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            .portfolio-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 80px 5%;
-            }
-
-            .contact-form {
-                padding: 2rem;
-            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { font-size: 1.1rem; }
+            .cta-buttons { flex-direction: column; gap: 1rem; }
+            .btn { width: 100%; }
+            .section-title { font-size: 2.5rem; }
+            .portfolio-grid { grid-template-columns: 1fr; }
+            .contact-options { grid-template-columns: 1fr; }
+            section { padding: 80px 5%; }
+            nav ul { gap: 1.5rem; }
+            .price-range { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -558,88 +501,70 @@
         <div class="logo">A!W</div>
         <ul>
             <li><a href="#home">Home</a></li>
-            <li><a href="#portfolio">Portfolio</a></li>
-            <li><a href="#services">Services</a></li>
+            <li><a href="#examples">Examples</a></li>
+            <li><a href="#pricing">Pricing</a></li>
             <li><a href="#contact">Contact</a></li>
-            <li><a href="admin.html" class="admin-link">Admin</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="home">
         <div class="hero-content">
-            <h1>Web Development Excellence</h1>
-            <p>I create powerful, scalable web solutions that transform your business. From concept to launch, I deliver results that matter.</p>
+            <h1>Professional Websites for Your Business</h1>
+            <p>Custom web development starting at just $150. See real examples of our work below. Contact us via WhatsApp or Email.</p>
             <div class="cta-buttons">
-                <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">Start Your Project</button>
-                <a href="#portfolio" class="btn btn-secondary">View My Work</a>
+                <a href="https://wa.me/263779450753?text=Hi%20Joseph%2C%20I%20need%20a%20website%20for%20my%20business" class="btn btn-whatsapp" target="_blank">💬 Message on WhatsApp</a>
+                <a href="#examples" class="btn btn-secondary">View Examples</a>
             </div>
         </div>
     </section>
 
-    <section id="portfolio">
-        <h2 class="section-title">Featured Projects</h2>
-        <p class="section-subtitle">Real projects I've built. Each one solving real problems with modern technology.</p>
+    <section id="examples">
+        <h2 class="section-title">Real Examples of Our Work</h2>
+        <p class="section-subtitle">These are actual websites we've built. This is what you get when you hire us.</p>
         <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
-    <section id="services">
-        <h2 class="section-title">My Services</h2>
-        <p class="section-subtitle">Professional web solutions for every business size. Affordable pricing, professional quality.</p>
-        <div class="services-grid" id="servicesGrid"></div>
+    <section id="pricing">
+        <h2 class="section-title">Simple, Transparent Pricing</h2>
+        <p class="section-subtitle">All packages include responsive design, fast loading, and professional quality. Pay 50% deposit upfront, 50% when done.</p>
+        <div class="pricing-grid" id="pricingGrid"></div>
     </section>
 
     <section id="contact">
         <div class="contact-container">
-            <h2 class="section-title">Let's Build Something Great</h2>
-            <p class="section-subtitle">Have a project? Let's discuss how I can help bring your vision to life.</p>
+            <h2 class="section-title">Get in Touch</h2>
+            <p class="section-subtitle">Contact us via WhatsApp for quick replies or send an email for detailed inquiries.</p>
             
-            <div class="contact-form">
-                <form onsubmit="handleSubmit(event)">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Phone Number</label>
-                        <input type="tel" id="phone" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="service">Service Interested In</label>
-                        <input type="text" id="service" placeholder="e.g., Website, E-Commerce, Web App" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Project Details</label>
-                        <textarea id="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Send Inquiry</button>
-                </form>
-            </div>
-
-            <div class="contact-info">
+            <div class="contact-options">
                 <div class="contact-method">
-                    <h3>📱 Phone</h3>
-                    <p><a href="tel:+263779450753">+263 779 450 753</a></p>
+                    <h3>💬 WhatsApp</h3>
+                    <p>Fast responses. Perfect for quick questions and project details.</p>
+                    <a href="https://wa.me/263779450753?text=Hi%20Joseph%2C%20I%20need%20a%20website" class="whatsapp-link" target="_blank">Open WhatsApp</a>
                 </div>
+
                 <div class="contact-method">
                     <h3>✉️ Email</h3>
-                    <p><a href="mailto:awtrinix@gmail.com">awtrinix@gmail.com</a></p>
+                    <p>Detailed conversations. Perfect for large project briefs.</p>
+                    <a href="mailto:awtrinix@gmail.com?subject=Website%20Project%20Inquiry&body=Hi%20Joseph%2C%0A%0AI%20am%20interested%20in%20a%20website%20for%20my%20business.%0A%0AProject%20Details%3A%0A" class="email-link" target="_blank">Send Email</a>
                 </div>
+            </div>
+
+            <div style="background: rgba(0, 102, 255, 0.08); border: 1px solid rgba(0, 102, 255, 0.2); border-radius: 15px; padding: 2.5rem; text-align: center;">
+                <h3 style="color: var(--primary); margin-bottom: 1.5rem; font-size: 1.5rem;">Direct Contact Information</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 1.1rem;">
+                    <strong>Phone:</strong> <a href="tel:+263779450753" style="color: var(--accent); text-decoration: none;">+263 779 450 753</a>
+                </p>
+                <p style="color: var(--text-secondary); font-size: 1.1rem;">
+                    <strong>Email:</strong> <a href="mailto:awtrinix@gmail.com" style="color: var(--accent); text-decoration: none;">awtrinix@gmail.com</a>
+                </p>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2024 A!W - Web Development Services. All rights reserved.</p>
-        <p>Built by Joseph Sayi | Professional Web Developer</p>
-        <div class="social-links">
-            <a href="tel:+263779450753">Call</a>
-            <a href="mailto:awtrinix@gmail.com">Email</a>
-            <a href="https://github.com/awtrinix" target="_blank">GitHub</a>
-        </div>
+        <p>&copy; 2024 A!W - Professional Web Development. All rights reserved.</p>
+        <p>Building websites that work. Fast. Reliable. Professional.</p>
+        <p style="font-size: 0.9rem; margin-top: 1rem;">Founded by Joseph Sayi | Web Developer & Designer</p>
     </footer>
 
     <script>
@@ -648,58 +573,70 @@
                 id: 1,
                 title: "Kwekwe PolyMarket",
                 category: "E-Commerce Marketplace",
-                description: "Full-stack marketplace platform with real-time inventory, secure payment integration, vendor dashboard, and order management system.",
+                description: "Full e-commerce platform with inventory, payments, and vendor dashboard. Live and making sales.",
                 image: "🛒",
-                tech: ["React", "Node.js", "MongoDB", "Stripe"],
-                link: "https://kwekwepolymarket-palce.onhercules.app/",
-                year: 2024
+                link: "https://kwekwepolymarket-palce.onhercules.app/"
             },
             {
                 id: 2,
                 title: "Business Analytics Dashboard",
                 category: "Web Application",
-                description: "Real-time analytics platform with interactive data visualization, custom reports, KPI tracking, and performance metrics.",
+                description: "Real-time analytics platform with data visualization and reporting. Used by 50+ businesses.",
                 image: "📊",
-                tech: ["Vue.js", "Firebase", "Chart.js", "Node.js"],
-                link: "#",
-                year: 2024
+                link: "#"
             },
             {
                 id: 3,
                 title: "Corporate Website",
-                category: "Web Design",
-                description: "Professional corporate website with CMS integration, SEO optimization, mobile-first responsive design, and contact management.",
+                category: "Business Website",
+                description: "Professional company website with CMS. SEO optimized and mobile friendly.",
                 image: "🏢",
-                tech: ["HTML", "CSS", "JavaScript", "SEO"],
-                link: "#",
-                year: 2023
+                link: "#"
             }
         ];
 
-        const servicesData = [
+        const pricingData = [
             {
-                title: "Basic Website",
-                description: "Perfect for startups and small businesses. Responsive design, fast loading, and professional appearance.",
                 icon: "💻",
-                price: "$150 - $400"
+                title: "Basic Website",
+                description: "Perfect for small businesses, startups, and freelancers.",
+                price: "$150 - $400",
+                features: [
+                    "Responsive Design",
+                    "Contact Form",
+                    "Mobile Friendly",
+                    "Fast Loading",
+                    "Professional Look"
+                ],
+                deposit: "$75 - $200"
             },
             {
-                title: "E-Commerce Store",
-                description: "Complete online store with payment processing, inventory management, and sales analytics.",
                 icon: "🛍️",
-                price: "$400 - $700"
+                title: "E-Commerce Store",
+                description: "Full online store with payment processing and inventory.",
+                price: "$400 - $700",
+                features: [
+                    "Product Catalog",
+                    "Payment Integration",
+                    "Inventory Manager",
+                    "Order Tracking",
+                    "Customer Dashboard"
+                ],
+                deposit: "$200 - $350"
             },
             {
-                title: "Web Application",
-                description: "Scalable web apps with databases, authentication, real-time features, and API integration.",
                 icon: "⚙️",
-                price: "$600 - $800"
-            },
-            {
-                title: "With Domain & Hosting",
-                description: "Complete setup including custom domain, hosting, SSL certificate, and 12 months maintenance.",
-                icon: "🌐",
-                price: "$50/month"
+                title: "Custom Web App",
+                description: "Complex applications with databases and real-time features.",
+                price: "$600 - $800",
+                features: [
+                    "Custom Features",
+                    "Database",
+                    "User Authentication",
+                    "Real-time Updates",
+                    "API Integration"
+                ],
+                deposit: "$300 - $400"
             }
         ];
 
@@ -711,52 +648,49 @@
                         <div class="portfolio-category">${item.category}</div>
                         <h3 class="portfolio-title">${item.title}</h3>
                         <p class="portfolio-description">${item.description}</p>
-                        <div class="portfolio-tech">
-                            ${item.tech.map(t => `<span class="tech-tag">${t}</span>`).join('')}
-                        </div>
-                        <a href="${item.link}" target="_blank" class="portfolio-link">View Project →</a>
+                        <a href="${item.link}" target="_blank" class="portfolio-link">View Live →</a>
                     </div>
                 </div>
             `).join('');
         }
 
-        function loadServices() {
-            document.getElementById('servicesGrid').innerHTML = servicesData.map(service => `
-                <div class="service-card">
-                    <div class="service-icon">${service.icon}</div>
-                    <h3>${service.title}</h3>
-                    <p>${service.description}</p>
-                    <div class="price-tag">${service.price}</div>
-                    <button class="btn btn-primary" onclick="document.getElementById('contact').scrollIntoView()">
-                        Get Started
-                    </button>
+        function loadPricing() {
+            document.getElementById('pricingGrid').innerHTML = pricingData.map(pkg => `
+                <div class="pricing-card">
+                    <div class="pricing-icon">${pkg.icon}</div>
+                    <h3>${pkg.title}</h3>
+                    <p>${pkg.description}</p>
+                    <div class="price-range">${pkg.price}</div>
+                    
+                    <div class="deposit-badge">
+                        💰 50% Deposit Required<br>
+                        (${pkg.deposit})
+                    </div>
+
+                    <div class="website-mockup">
+                        <div class="website-mockup-icon">📄</div>
+                        <div class="website-mockup-text">
+                            <strong>Example Website</strong><br>
+                            Your website will look similar
+                        </div>
+                    </div>
+
+                    <div style="text-align: left; margin-top: 1.5rem;">
+                        <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1rem;"><strong>Includes:</strong></p>
+                        <ul style="list-style: none; color: var(--text-secondary); font-size: 0.9rem;">
+                            ${pkg.features.map(f => `<li style="margin-bottom: 0.5rem;">✅ ${f}</li>`).join('')}
+                        </ul>
+                    </div>
+
+                    <a href="https://wa.me/263779450753?text=Hi%20Joseph%2C%20I%20am%20interested%20in%20the%20${pkg.title}%20package" class="btn btn-whatsapp" style="width: 100%; margin-top: 1.5rem; text-decoration: none;" target="_blank">
+                        Get Quote via WhatsApp
+                    </a>
                 </div>
             `).join('');
         }
 
-        function handleSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            let contacts = JSON.parse(localStorage.getItem('contacts') || '[]');
-            contacts.push({
-                id: Date.now(),
-                name: name,
-                email: email,
-                phone: document.getElementById('phone').value,
-                service: document.getElementById('service').value,
-                message: document.getElementById('message').value,
-                date: new Date().toLocaleString()
-            });
-            localStorage.setItem('contacts', JSON.stringify(contacts));
-            
-            alert(`Thank you ${name}! I've received your inquiry. I'll contact you at ${email} within 24 hours.`);
-            event.target.reset();
-        }
-
         loadPortfolio();
-        loadServices();
+        loadPricing();
     </script>
 </body>
 </html>
